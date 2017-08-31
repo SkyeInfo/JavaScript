@@ -1,0 +1,35 @@
+<!--pages/links/links.wxml-->
+<import src="../common/head.wxml"/>
+<import src="../common/foot.wxml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'request'}}"/>
+
+  <view class="page-body">
+    <view class="page-body-wording">
+      <text class="page-body-text">
+        点击向服务器发起请求
+      </text>
+    </view>
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <navigator url="{{item.bloger}}/{{item.url}}">
+          <view class="kind-list-item">
+            <view id="{{item.id}}" class="kind-list-item-hd">
+              <view class="kind-list-text">{{item.bloger}}</view>
+              <view class="kind-list-text">{{item.url}}</view>
+              <view class="kind-list-text">{{item.description}}</view>
+              <view class="kind-list-text">{{item.type}}</view>
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+    <view class="btn-area">
+      <button bindtap="makeRequest" type="primary" disabled="{{buttonDisabled}}" loading="{{loading}}">request</button>
+    </view>
+  </view>
+
+  <template is="foot"/>
+</view>
+
