@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/index",
+    "pages/index/index",
     "pages/logs/logs",
     "pages/blogs/blogs",
     "pages/technology/technology",
